@@ -1,41 +1,46 @@
 export default function OurStory() {
   return (
-    <article className="mx-auto max-w-2xl px-4 py-16 space-y-6 text-base leading-relaxed">
-      <h1 className="font-display text-4xl md:text-5xl uppercase tracking-widest text-center">
-        Our Story
-      </h1>
+    <article className="mx-auto max-w-3xl px-4 py-16 space-y-5 text-[15px] leading-7">
+      <h1 className="eyebrow mb-10">Our Story</h1>
 
-      <p className="text-lg font-display tracking-wide">
-        A farm-to-table American diner in the Sonoran Desert with a Southern
-        tinge.
+      <p className="font-semibold text-base">
+        Welcome Diner is a farm to table, American Fare diner in the
+        Southwest/Sonoran Desert with roots in a Southern tinge.
       </p>
 
       <p>
-        We cook from scratch with the finest ingredients, sourced with
-        integrity from purveyor partners we trust. Genuine hospitality is our
-        standard — we try to make every guest&rsquo;s experience a little
-        better than the last.
+        We scratch cook with the finest ingredients – made with integrity by
+        our purveyor partners. We prize providing our guests with genuine
+        hospitality. We strive to create a better experience for our guests
+        every day.
       </p>
 
       <p>
-        Welcome Diner sits on the southwest corner of 10th and Pierce, tucked
-        into the historic Garfield neighborhood of Downtown Phoenix. Our
-        hospitality journey in Garfield began more than fifteen years ago in a
-        humble 200-square-foot space; we moved into our current home in the
-        late spring of 2018. We remain committed to Garfield as the
-        neighborhood continues to grow.
+        The Welcome Diner is located on the southwest corner of the 4 Corners
+        commercial hub of 10th St and Pierce, embedded in the historic
+        Garfield neighborhood, Downtown Phoenix. We started our hospitality
+        journey in Garfield over 15 years ago, humbly, in a 200 square foot
+        space – and had some epic times to boot throughout the years; we
+        moved into our new digs in the late spring of &rsquo;18. The Diner is
+        committed to Garfield as it continues to evolve and develop as the
+        special place it is and has always been.
       </p>
 
       <p>
-        The new space is a collaboration with our neighbors at Kaiserworks and
-        Welcome&rsquo;s sister studio, Martha + Mary. A crowd of regulars,
-        team members, and friends made it possible — we&rsquo;re grateful to
-        all of them.
+        The new space is a collaboration between our neighbor/architecture
+        firm, Kaiserworks, and Welcome&rsquo;s sister affiliate, Martha +
+        Mary Studio. An amazing group of homies joined in: Welcome team
+        members and regulars, Randal Wilson, Pueblo, Jon Haddock, Loud
+        Luggage, Doug Abrahamson, soldierleisure, Randy Slack, Danelle
+        Hacche, Vince Droney, Matt Minarjes and many others.
       </p>
 
-      <p className="italic font-display">
-        We look forward to serving you.
+      <p>
+        Our greatest hope is that the Welcome Diner, for many years to come,
+        will be a community asset for you and yours.
       </p>
+
+      <p className="italic font-semibold">We look forward to serving you!</p>
     </article>
   );
 }

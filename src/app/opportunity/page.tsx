@@ -1,5 +1,3 @@
-import { ExternalButton } from "@/components/ExternalButton";
-
 const hiringEmail = "joinourteam@welcomehospitality.com";
 
 export default function Opportunity() {
@@ -8,19 +6,23 @@ export default function Opportunity() {
   )}`;
   return (
     <section className="mx-auto max-w-2xl px-4 py-16 text-center space-y-6">
-      <h1 className="font-display text-4xl md:text-5xl uppercase tracking-widest">
-        Opportunity
-      </h1>
-      <p className="text-base leading-relaxed">
-        We&rsquo;re always looking for strong teammates with unique skills and
-        real hospitality instincts. Tell us who you are and what&rsquo;s good —
-        become a Welcome Homie.
+      <h1 className="eyebrow mb-4">Opportunity</h1>
+      <p className="text-base leading-7">
+        We are always searching for strong team members with unique and
+        valuable skills.
       </p>
-      <div className="pt-2">
-        <ExternalButton href={mailto} external>
-          Email Us
-        </ExternalButton>
-      </div>
+      <p className="text-base leading-7">
+        who are you? tell us what&rsquo;s good,
+      </p>
+      <p className="font-display text-xl tracking-wide">
+        become a WELCOME HOMIE
+      </p>
+      <a
+        href={mailto}
+        className="inline-block border border-brand-muted/30 px-6 py-3 text-xs uppercase tracking-[0.35em] hover:border-brand-accent hover:text-brand-accent transition-colors"
+      >
+        Email Us
+      </a>
     </section>
   );
 }

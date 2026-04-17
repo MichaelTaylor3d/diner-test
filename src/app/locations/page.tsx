@@ -1,29 +1,30 @@
-import { LocationCard, type LocationData } from "@/components/LocationCard";
-
-const locations: LocationData[] = [
-  {
-    name: "Welcome Diner — Phoenix",
-    addressLines: ["929 E Pierce St", "Phoenix, AZ 85006"],
-    hours: [],
-    mapsUrl:
-      "https://www.google.com/maps/dir//929+E+Pierce+St,+Phoenix,+AZ+85006",
-  },
-];
+import Image from "next/image";
+import { images } from "@/data/images";
 
 export default function Locations() {
   return (
-    <section className="mx-auto max-w-5xl px-4 py-16">
-      <h1 className="font-display text-4xl md:text-5xl uppercase tracking-widest text-center mb-2">
-        Locations
-      </h1>
-      <p className="text-center text-brand-muted mb-10">
-        Find us in the Garfield Historic District, Downtown Phoenix.
+    <section className="mx-auto max-w-5xl px-4 py-16 text-center">
+      <h1 className="eyebrow mb-4">Locations</h1>
+      <p className="font-display text-2xl md:text-3xl tracking-wide lowercase mb-10">
+        you can find us in the garfield historic district downtown phoenix
       </p>
-      <div className="grid gap-6 md:grid-cols-2">
-        {locations.map((l) => (
-          <LocationCard key={l.name} location={l} />
-        ))}
-      </div>
+      <a
+        href="https://www.google.com/maps/dir//929+E+Pierce+St,+Phoenix,+AZ+85006"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block relative aspect-[16/9] w-full max-w-3xl mx-auto"
+      >
+        <Image
+          src={images.locationsMap}
+          alt="Welcome Diner exterior — 929 E Pierce St, Phoenix AZ"
+          fill
+          sizes="(min-width: 1024px) 768px, 100vw"
+          className="object-cover"
+        />
+      </a>
+      <p className="mt-6 text-xs uppercase tracking-[0.35em] text-brand-muted">
+        929 E Pierce St · Phoenix, AZ 85006
+      </p>
     </section>
   );
 }
