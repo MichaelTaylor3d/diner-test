@@ -4,7 +4,6 @@ import { SocialLinks } from "./SocialLinks";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { Divider } from "@/components/atoms/Divider";
 import { CreditsStrip } from "@/components/molecules/CreditsStrip";
-import { BrassButton } from "@/components/atoms/BrassButton";
 
 const hours = [
   { label: "Sun", value: "9a – 9p" },
@@ -20,11 +19,6 @@ export function Footer() {
 
   return (
     <footer className="mt-24 bg-bg-deep text-cream">
-      <div className="bg-cream text-ink py-16 px-4 text-center">
-        <p className="eyebrow text-terracotta mb-3">Reserve</p>
-        <h2 className="display text-3xl md:text-5xl mb-6">Save a seat for Sunday brunch.</h2>
-        <BrassButton href={externalLinks.order} external size="lg">Order Online</BrassButton>
-      </div>
       <div className="mx-auto max-w-6xl px-4 py-16 grid gap-10 md:grid-cols-3">
         <div>
           <Eyebrow className="text-brass">Welcome Diner</Eyebrow>
