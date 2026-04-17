@@ -1,48 +1,46 @@
+import { DisplayText } from "@/components/atoms/DisplayText";
+import { Eyebrow } from "@/components/atoms/Eyebrow";
+import { Divider } from "@/components/atoms/Divider";
+import { RevealOnView } from "@/components/motion/RevealOnView";
+import { CopyEmailButton } from "@/components/molecules/CopyEmailButton";
+
 const hiringEmail = "joinourteam@welcomehospitality.com";
 
 const roles = ["Prep Cook", "Line Cook", "Dishwasher"];
 
 export default function Opportunity() {
-  const mailto = `mailto:${hiringEmail}?subject=${encodeURIComponent(
-    "Opportunity — Welcome Diner"
-  )}`;
   return (
-    <section className="mx-auto max-w-xl px-4 py-12 text-center">
-      <h1 className="eyebrow mb-10">Opportunity</h1>
+    <section className="mx-auto max-w-2xl px-4 py-20 text-center">
+      <RevealOnView>
+        <Eyebrow className="text-terracotta">Opportunity</Eyebrow>
+        <DisplayText as="h1" size="xl" className="mt-2">
+          Become a Welcome Homie.
+        </DisplayText>
+      </RevealOnView>
 
-      <p className="italic font-semibold text-lg leading-snug uppercase">
-        Currently looking for
-        <br />
-        back of house peeps…
-      </p>
+      <Divider className="mt-12" label="Now Hiring" />
 
-      <ul className="mt-4 space-y-1 text-sm uppercase tracking-wide">
+      <RevealOnView className="mt-8 flex flex-wrap justify-center gap-3">
         {roles.map((r) => (
-          <li key={r}>{r}</li>
+          <span
+            key={r}
+            className="border border-brass/60 px-5 py-2 text-xs uppercase tracking-[0.35em] text-brass"
+          >
+            {r}
+          </span>
         ))}
-        <li className="text-brand-muted">+</li>
-      </ul>
+      </RevealOnView>
 
-      <p className="mt-4 italic font-semibold text-base leading-snug uppercase">
-        We are always searching for
-        <br />
-        strong team members with
-        <br />
-        unique and valuable skills
-      </p>
+      <RevealOnView>
+        <p className="mt-10 italic text-base leading-7 text-desert-shadow">
+          We are always searching for strong team members with unique and
+          valuable skills. Who are you? Tell us what&rsquo;s good.
+        </p>
+      </RevealOnView>
 
-      <p className="mt-4 text-base">
-        who are you? tell us what&rsquo;s good,
-        <br />
-        become a WELCOME HOMIE…
-      </p>
-
-      <a
-        href={mailto}
-        className="mt-10 inline-block bg-brand-muted/10 px-6 py-3 text-xs uppercase tracking-[0.35em] hover:bg-brand-accent hover:text-white transition-colors"
-      >
-        Email Us
-      </a>
+      <div className="mt-10">
+        <CopyEmailButton email={hiringEmail} subject="Opportunity — Welcome Diner" />
+      </div>
     </section>
   );
 }
