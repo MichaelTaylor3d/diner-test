@@ -11,8 +11,10 @@ import { SectionRule } from "@/components/atoms/SectionRule";
 export default function Home() {
   return (
     <>
-      <HomeHero />
-      <Marquee />
+      <div className="flex h-[100svh] flex-col">
+        <HomeHero />
+        <Marquee />
+      </div>
       <HoursStrip />
       <SectionRule />
       <EditorialTriptych />

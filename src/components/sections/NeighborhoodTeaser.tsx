@@ -9,7 +9,7 @@ import { images } from "@/data/images";
 export function NeighborhoodTeaser() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-24 grid gap-12 md:grid-cols-2 items-center">
-      <RevealOnView className="relative aspect-[4/5] overflow-hidden">
+      <RevealOnView className="relative aspect-[3/2] overflow-hidden">
         <ParallaxImage
           src={images.neighborhoodStreet}
           alt="Garfield streetscape"

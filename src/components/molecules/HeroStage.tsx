@@ -18,7 +18,7 @@ export function HeroStage({
   alt,
   overlay = 0.55,
   children,
-  heightClass = "h-[88vh] min-h-[620px]",
+  heightClass = "flex-1 min-h-[520px]",
 }: Props) {
   const reduced = useReducedMotionSafe();
   return (

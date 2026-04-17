@@ -42,7 +42,7 @@ export function EditorialTriptych() {
               href={c.href}
               className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 focus-visible:ring-offset-bg-ivory"
             >
-              <div className="relative w-full overflow-hidden aspect-[3/4]">
+              <div className="relative w-full overflow-hidden aspect-[3/2]">
                 <ParallaxImage
                   src={c.image}
                   alt={c.alt}

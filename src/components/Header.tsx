@@ -70,15 +70,10 @@ export function Header() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
-  const isHome = pathname === "/";
   const headerCls =
-    scrollState === "atTop"
-      ? isHome
-        ? "bg-transparent text-cream py-6"
-        : "bg-bg-ivory text-ink py-6"
-      : scrollState === "condensed"
+    scrollState === "condensed"
       ? "backdrop-blur bg-bg-ivory/90 text-ink py-3"
-      : "bg-bg-ivory text-ink py-6";
+      : "backdrop-blur bg-bg-ivory/90 text-ink py-6";
 
   return (
     <header
