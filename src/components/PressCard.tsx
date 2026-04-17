@@ -5,7 +5,7 @@ export type PressData = {
 };
 
 export function PressCard({ press }: { press: PressData }) {
-  const Inner = () => (
+  const content = (
     <article className="p-6 border border-brand-muted/30 rounded h-full">
       <h3 className="font-display text-xl uppercase tracking-widest">
         {press.publication}
@@ -15,6 +15,7 @@ export function PressCard({ press }: { press: PressData }) {
       )}
     </article>
   );
+
   return press.url ? (
     <a
       href={press.url}
@@ -22,9 +23,9 @@ export function PressCard({ press }: { press: PressData }) {
       rel="noopener noreferrer"
       className="block hover:border-brand-accent"
     >
-      <Inner />
+      {content}
     </a>
   ) : (
-    <Inner />
+    content
   );
 }
