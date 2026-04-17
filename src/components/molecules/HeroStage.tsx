@@ -16,7 +16,7 @@ type Props = {
 export function HeroStage({
   image,
   alt,
-  overlay = 0.35,
+  overlay = 0.55,
   children,
   heightClass = "h-[88vh] min-h-[620px]",
 }: Props) {
@@ -32,7 +32,7 @@ export function HeroStage({
         <Image src={image} alt={alt} fill priority sizes="100vw" className="object-cover" />
       </motion.div>
       <div className="absolute inset-0" style={{ background: `rgba(31,26,23,${overlay})` }} />
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center text-bg-ivory">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center text-cream drop-shadow-[0_2px_12px_rgba(0,0,0,0.35)]">
         {children}
       </div>
     </section>

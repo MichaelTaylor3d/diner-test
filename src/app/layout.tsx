@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import { Grain } from "@/components/Grain";
 
 const display = Cormorant_Garamond({
   variable: "--font-display",
@@ -35,6 +36,7 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg-ivory text-ink">
+        <Grain />
         <SmoothScroll>
           <Header />
           <main className="flex-1">{children}</main>

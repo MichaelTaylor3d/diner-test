@@ -13,7 +13,7 @@ export function HomeHero() {
   return (
     <HeroStage image={images.heroHome} alt="Welcome Diner interior">
       <motion.h1
-        className="display text-6xl md:text-8xl tracking-[0.18em] uppercase"
+        className="display text-6xl sm:text-7xl md:text-8xl lg:text-[9rem] tracking-[0.2em] uppercase leading-[0.95] text-cream drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]"
         initial="hidden"
         animate="show"
         variants={stagger(0.08)}

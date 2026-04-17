@@ -16,7 +16,7 @@ const sizes: Record<Size, string> = {
 
 export function BrassButton({ href, external, size = "sm", className = "", children }: Props) {
   const base =
-    "group relative inline-flex items-center justify-center overflow-hidden border border-brass uppercase tracking-[0.4em] text-brass transition-colors";
+    "group relative inline-flex items-center justify-center overflow-hidden border border-brass uppercase tracking-[0.4em] text-brass transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)] hover:tracking-[0.55em] hover:shadow-[0_10px_30px_-10px_rgba(185,149,104,0.45)]";
   const fill =
     "before:absolute before:inset-0 before:origin-left before:scale-x-0 before:bg-brass before:transition-transform before:duration-500 before:ease-[cubic-bezier(.22,1,.36,1)] hover:before:scale-x-100 hover:text-bg-ivory";
   const text = "relative z-10";

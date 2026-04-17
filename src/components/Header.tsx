@@ -26,7 +26,7 @@ const more: NavEntry[] = [
 
 function NavLink({ item, active }: { item: NavEntry; active: boolean }) {
   const cls = `relative inline-flex items-center uppercase tracking-[0.35em] text-[11px] transition-colors hover:text-terracotta ${
-    active ? "text-terracotta" : "text-ink"
+    active ? "text-terracotta" : "text-current"
   }`;
   const underline = (
     <span
@@ -52,11 +52,16 @@ function NavLink({ item, active }: { item: NavEntry; active: boolean }) {
 }
 
 export function Header() {
-  const [condensed, setCondensed] = useState(false);
+  const [scrollState, setScrollState] = useState<"atTop" | "mid" | "condensed">("atTop");
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setCondensed(window.scrollY > 80);
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (y < 8) setScrollState("atTop");
+      else if (y > 80) setScrollState("condensed");
+      else setScrollState("mid");
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -65,23 +70,28 @@ export function Header() {
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
+  const headerCls =
+    scrollState === "atTop"
+      ? "bg-transparent text-cream py-6"
+      : scrollState === "condensed"
+      ? "backdrop-blur bg-bg-ivory/90 text-ink py-3"
+      : "bg-bg-ivory text-ink py-6";
+
   return (
     <header
-      className={`sticky top-0 z-40 w-full transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)] ${
-        condensed ? "backdrop-blur bg-bg-ivory/85 py-3" : "bg-bg-ivory py-6"
-      }`}
+      className={`sticky top-0 z-40 w-full transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)] ${headerCls}`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-center px-4">
         <nav className="hidden lg:flex items-center justify-center gap-10">
           {primary.map((item) => (
             <NavLink key={item.label} item={item} active={isActive(item.href)} />
           ))}
-          <div className="group relative">
-            <button className="flex items-center gap-1 uppercase tracking-[0.35em] text-[11px] text-ink hover:text-terracotta transition-colors">
+          <span className="group relative">
+            <button className="flex items-center gap-1 uppercase tracking-[0.35em] text-[11px] text-current hover:text-terracotta transition-colors">
               More <span aria-hidden>▾</span>
             </button>
-            <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 hidden group-hover:block group-focus-within:block">
-              <div className="bg-bg-ivory border border-brass/30 shadow-lg min-w-[200px] py-2">
+            <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 hidden group-hover:block group-focus-within:block z-50">
+              <div className="bg-cream text-ink border border-brass/40 shadow-2xl min-w-[220px] py-3">
                 {more.map((item) => (
                   <Link
                     key={item.label}
@@ -95,7 +105,7 @@ export function Header() {
                 ))}
               </div>
             </div>
-          </div>
+          </span>
         </nav>
 
         <div className="lg:hidden ml-auto">

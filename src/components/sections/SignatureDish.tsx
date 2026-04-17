@@ -23,7 +23,7 @@ export function SignatureDish() {
         <DisplayText as="h2" size="lg" className="mt-2">
           Fried Green Tomato Sandwich.
         </DisplayText>
-        <p className="mt-6 text-base leading-7 text-desert-shadow">
+        <p className="mt-6 text-base leading-7 text-brass">
           A regional favorite with cornmeal-crusted tomatoes, pimento cheese, and
           a little heat — built on sourdough that&rsquo;s been on our menu almost
           as long as our sign.
