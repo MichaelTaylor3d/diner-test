@@ -18,7 +18,11 @@ export function ParallaxImage({ strength = 40, className, ...imageProps }: Props
   const y = useTransform(scrollYProgress, [0, 1], [strength, -strength]);
 
   return (
-    <motion.div ref={ref} style={{ y }} className={`will-change-transform ${className ?? ""}`}>
+    <motion.div
+      ref={ref}
+      style={{ y }}
+      className={`absolute inset-0 will-change-transform ${className ?? ""}`}
+    >
       <Image {...imageProps} alt={imageProps.alt} />
     </motion.div>
   );

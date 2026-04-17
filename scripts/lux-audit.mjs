@@ -24,14 +24,24 @@ const viewports = [
 ];
 
 async function scrollThroughPage(page) {
-  const height = await page.evaluate(() => document.body.scrollHeight);
-  const step = 400;
-  for (let y = 0; y < height; y += step) {
-    await page.evaluate((y) => window.scrollTo(0, y), y);
-    await page.waitForTimeout(250);
+  // Two full passes: first trigger lazy-load + whileInView, second settle scroll state.
+  for (let pass = 0; pass < 2; pass++) {
+    const height = await page.evaluate(() => document.body.scrollHeight);
+    const step = 300;
+    for (let y = 0; y < height; y += step) {
+      await page.evaluate((y) => window.scrollTo(0, y), y);
+      await page.waitForTimeout(180);
+    }
   }
+  // Wait for lazy images to decode.
+  await page.evaluate(async () => {
+    const imgs = Array.from(document.images);
+    await Promise.all(
+      imgs.map((img) => (img.complete ? Promise.resolve() : new Promise((r) => (img.onload = img.onerror = r))))
+    );
+  });
   await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(500);
+  await page.waitForTimeout(800);
 }
 
 const browser = await chromium.launch();
