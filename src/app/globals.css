@@ -1,11 +1,24 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #111111;
+@theme {
+  --color-brand-bg: #f6f6f6;
+  --color-brand-fg: #161616;
+  --color-brand-accent: #8f6e6e;
+  --color-brand-muted: #474747;
+
+  --font-display: var(--font-display), "Playfair Display", Georgia, serif;
+  --font-body: var(--font-body), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-brand-bg);
+  color: var(--color-brand-fg);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
 }
