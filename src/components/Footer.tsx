@@ -63,7 +63,7 @@ export function Footer() {
         </div>
       </div>
 
-      <Divider className="mx-auto max-w-6xl px-4" label="est. 2004" />
+      <Divider className="mx-auto max-w-6xl px-4 my-10" label="est. 2004" />
 
       <CreditsStrip />
       <p className="py-6 text-center text-[10px] uppercase tracking-[0.4em] text-desert-shadow">

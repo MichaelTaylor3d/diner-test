@@ -69,9 +69,9 @@ export const luxImages: LuxImage[] = [
   {
     key: "neighborhoodStreet",
     filename: "neighborhood-street.jpg",
-    url: "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?auto=format&fit=crop&w=1400&q=80",
-    photographer: "Fineas Anton",
-    photographerUrl: "https://unsplash.com/@fineas_anton",
+    url: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1400&q=80",
+    photographer: "Dino Reichmuth",
+    photographerUrl: "https://unsplash.com/@dinoreichmuth",
   },
   {
     key: "ambientCoffee",
@@ -83,16 +83,16 @@ export const luxImages: LuxImage[] = [
   {
     key: "ambientBanquette",
     filename: "ambient-banquette.jpg",
-    url: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=80",
-    photographer: "Kate Townsend",
-    photographerUrl: "https://unsplash.com/@katetown",
+    url: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1000&q=80",
+    photographer: "Patrick Tomasso",
+    photographerUrl: "https://unsplash.com/@impatrickt",
   },
   {
     key: "ambientSign",
     filename: "ambient-sign.jpg",
-    url: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80",
-    photographer: "Ash Edmonds",
-    photographerUrl: "https://unsplash.com/@ash_edmonds",
+    url: "https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=1000&q=80",
+    photographer: "Tim Mossholder",
+    photographerUrl: "https://unsplash.com/@timmossholder",
   },
   {
     key: "staffPortrait",
@@ -104,7 +104,7 @@ export const luxImages: LuxImage[] = [
   {
     key: "purveyorGrain",
     filename: "purveyor-grain.jpg",
-    url: "https://images.unsplash.com/photo-1565687981296-535f09db714e?auto=format&fit=crop&w=1200&q=80",
+    url: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1200&q=80",
     photographer: "Melissa Askew",
     photographerUrl: "https://unsplash.com/@melissaaskew",
   },
