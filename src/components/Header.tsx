@@ -77,7 +77,7 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-40 w-full transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)] ${headerCls}`}
+      className={`sticky top-0 z-[130] w-full transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)] ${headerCls}`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-center px-4">
         <nav className="hidden lg:flex items-center justify-center gap-10">
