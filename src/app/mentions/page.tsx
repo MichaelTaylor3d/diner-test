@@ -3,6 +3,7 @@ import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { DisplayText } from "@/components/atoms/DisplayText";
 import { RevealOnView } from "@/components/motion/RevealOnView";
 import { IconArrow } from "@/components/atoms/IconArrow";
+import { PressStrip } from "@/components/molecules/PressStrip";
 
 type Entry = { text: string; url?: string };
 
@@ -79,16 +80,34 @@ function Section({ label, entries }: { label: string; entries: Entry[] }) {
 
 export default function Mentions() {
   return (
-    <section className="mx-auto max-w-3xl px-4 py-16">
-      <RevealOnView className="text-center">
-        <Eyebrow className="text-terracotta">Press</Eyebrow>
-        <DisplayText as="h1" size="lg" className="mt-2">
-          In good company.
-        </DisplayText>
-      </RevealOnView>
-      <Section label="Articles" entries={articles} />
-      <Section label="Awards" entries={awards} />
-      <Section label="Reviews" entries={reviews} />
-    </section>
+    <>
+      <section className="mx-auto max-w-3xl px-4 pt-16 text-center">
+        <RevealOnView>
+          <Eyebrow className="text-terracotta">Press</Eyebrow>
+          <DisplayText as="h1" size="lg" className="mt-2">
+            In good company.
+          </DisplayText>
+        </RevealOnView>
+      </section>
+
+      <PressStrip linkToMentions={false} />
+
+      <section className="mx-auto max-w-3xl px-4 py-12">
+        <RevealOnView>
+          <blockquote className="display italic text-center text-3xl md:text-4xl leading-snug text-ink">
+            &ldquo;Arizona&rsquo;s retro gem in the heart of downtown Phoenix.&rdquo;
+            <footer className="mt-4 text-xs not-italic tracking-[0.3em] uppercase text-brass">
+              — Islands.com
+            </footer>
+          </blockquote>
+        </RevealOnView>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 pb-16">
+        <Section label="Articles" entries={articles} />
+        <Section label="Awards" entries={awards} />
+        <Section label="Reviews" entries={reviews} />
+      </section>
+    </>
   );
 }
