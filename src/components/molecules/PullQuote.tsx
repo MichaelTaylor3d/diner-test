@@ -11,7 +11,7 @@ export function PullQuote({ children, attribution, className = "" }: Props) {
     >
       <p>&ldquo;{children}&rdquo;</p>
       {attribution && (
-        <footer className="mt-3 text-xs not-italic tracking-[0.3em] uppercase text-desert-shadow">
+        <footer className="mt-4 text-[11px] not-italic tracking-[0.35em] uppercase text-brass">
           {attribution}
         </footer>
       )}
