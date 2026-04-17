@@ -47,3 +47,4 @@ next-env.d.ts
 .playwright/
 .aws/distribution-result.json
 .aws-deploy-bucket
+.claude/
