@@ -1,30 +1,22 @@
 import Image from "next/image";
+import { RuledHeading } from "@/components/RuledHeading";
 import { images } from "@/data/images";
 
 export default function Locations() {
   return (
-    <section className="mx-auto max-w-5xl px-4 py-16 text-center">
-      <h1 className="eyebrow mb-4">Locations</h1>
-      <p className="font-display text-2xl md:text-3xl tracking-wide lowercase mb-10">
+    <section className="mx-auto max-w-5xl px-4 py-8 text-center">
+      <RuledHeading>
         you can find us in the garfield historic district downtown phoenix
-      </p>
-      <a
-        href="https://www.google.com/maps/dir//929+E+Pierce+St,+Phoenix,+AZ+85006"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block relative aspect-[16/9] w-full max-w-3xl mx-auto"
-      >
+      </RuledHeading>
+      <div className="relative mx-auto mt-6 aspect-[16/10] w-full max-w-3xl">
         <Image
           src={images.locationsMap}
-          alt="Welcome Diner exterior — 929 E Pierce St, Phoenix AZ"
+          alt="Welcome Diner — 929 E Pierce St, Phoenix AZ"
           fill
           sizes="(min-width: 1024px) 768px, 100vw"
-          className="object-cover"
+          className="object-contain"
         />
-      </a>
-      <p className="mt-6 text-xs uppercase tracking-[0.35em] text-brand-muted">
-        929 E Pierce St · Phoenix, AZ 85006
-      </p>
+      </div>
     </section>
   );
 }

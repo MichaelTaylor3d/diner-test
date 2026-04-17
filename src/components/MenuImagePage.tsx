@@ -7,8 +7,7 @@ type Props = {
 
 export function MenuImagePage({ title, image }: Props) {
   return (
-    <section className="mx-auto max-w-5xl px-4 py-12">
-      <h1 className="eyebrow text-center mb-8">{title}</h1>
+    <section className="mx-auto max-w-5xl px-4 py-8">
       <div className="relative w-full aspect-[3/4] sm:aspect-[4/3]">
         <Image
           src={image}
