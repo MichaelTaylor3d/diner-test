@@ -26,7 +26,7 @@ const sisters = [
 
 export default function SisterSpots() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-16">
+    <section className="mx-auto max-w-6xl px-4 py-20">
       <RevealOnView className="text-center">
         <Eyebrow className="text-terracotta">Sister Spots</Eyebrow>
         <DisplayText as="h1" size="lg" className="mt-2">

@@ -8,7 +8,7 @@ import { images } from "@/data/images";
 
 export default function OurStory() {
   return (
-    <article className="mx-auto max-w-3xl px-4 py-16 space-y-10">
+    <article className="mx-auto max-w-3xl px-4 py-20 space-y-10">
       <header className="text-center">
         <Eyebrow className="text-terracotta">Our Story</Eyebrow>
         <DisplayText as="h1" size="lg" className="mt-2">

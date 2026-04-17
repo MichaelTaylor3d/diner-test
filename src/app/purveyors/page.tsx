@@ -9,7 +9,7 @@ import { images } from "@/data/images";
 export default function Purveyors() {
   return (
     <>
-      <section className="mx-auto max-w-3xl px-4 py-16 text-center">
+      <section className="mx-auto max-w-3xl px-4 py-20 text-center">
         <RevealOnView>
           <Eyebrow className="text-terracotta">Purveyors</Eyebrow>
           <DisplayText as="h1" size="lg" className="mt-2">

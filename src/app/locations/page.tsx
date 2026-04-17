@@ -23,7 +23,7 @@ const ambient = [
 export default function Locations() {
   return (
     <>
-      <section className="mx-auto max-w-6xl px-4 py-16 grid gap-12 md:grid-cols-2 items-center">
+      <section className="mx-auto max-w-6xl px-4 py-20 grid gap-12 md:grid-cols-2 items-center">
         <RevealOnView className="relative aspect-[4/5] overflow-hidden">
           <Image
             src={images.editorialRoom}
