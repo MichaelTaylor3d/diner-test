@@ -1,4 +1,7 @@
-import { EditorialCard } from "@/components/molecules/EditorialCard";
+import Link from "next/link";
+import Image from "next/image";
+import { Eyebrow } from "@/components/atoms/Eyebrow";
+import { IconArrow } from "@/components/atoms/IconArrow";
 import { RevealOnView } from "@/components/motion/RevealOnView";
 import { images } from "@/data/images";
 
@@ -49,15 +52,32 @@ export function MenuCardGrid() {
       <div className="grid gap-12 md:grid-cols-2">
         {menus.map((m) => (
           <RevealOnView key={m.label} amount={0.25}>
-            <EditorialCard
+            <Link
               href={m.href}
-              eyebrow="Menu"
-              title={m.label}
-              body={m.body}
-              image={m.image}
-              alt={`${m.label} menu cover`}
-              aspectClass="aspect-[4/5]"
-            />
+              className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-brass focus-visible:ring-offset-2 focus-visible:ring-offset-bg-ivory"
+            >
+              <div className="relative w-full overflow-hidden aspect-[4/5]">
+                <Image
+                  src={m.image}
+                  alt={`${m.label} menu cover`}
+                  fill
+                  sizes="(min-width:1024px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-700 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-[1.04]"
+                />
+              </div>
+              <Eyebrow className="mt-5 text-terracotta">Menu</Eyebrow>
+              <h3 className="display text-4xl md:text-5xl mt-2 transition-colors duration-300 group-hover:text-terracotta">
+                {m.label}
+              </h3>
+              {m.body && (
+                <p className="mt-3 text-base leading-7 text-desert-shadow">
+                  {m.body}
+                </p>
+              )}
+              <span className="mt-4 inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.35em] text-brass">
+                Explore <IconArrow size={14} />
+              </span>
+            </Link>
           </RevealOnView>
         ))}
       </div>
