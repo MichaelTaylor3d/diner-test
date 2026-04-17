@@ -12,14 +12,14 @@ export function MobileNav() {
       <button
         aria-label={open ? "Close menu" : "Open menu"}
         onClick={() => setOpen((o) => !o)}
-        className="p-2"
+        className="p-2 text-ink hover:text-terracotta transition-colors"
       >
         {open ? <X size={24} /> : <Menu size={24} />}
       </button>
 
       {open && (
-        <div className="fixed inset-0 top-14 z-50 bg-brand-bg overflow-y-auto">
-          <nav className="flex flex-col gap-4 p-6 text-lg uppercase tracking-widest">
+        <div className="fixed inset-0 top-14 z-50 bg-bg-ivory overflow-y-auto">
+          <nav className="flex flex-col gap-5 p-8 text-base uppercase tracking-[0.35em]">
             {primaryNav.map((item) =>
               item.external ? (
                 <a
@@ -28,6 +28,7 @@ export function MobileNav() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
+                  className="hover:text-terracotta"
                 >
                   {item.label}
                 </a>
@@ -36,6 +37,7 @@ export function MobileNav() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setOpen(false)}
+                  className="hover:text-terracotta"
                 >
                   {item.label}
                 </Link>
