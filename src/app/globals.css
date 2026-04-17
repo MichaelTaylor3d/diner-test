@@ -1,18 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-bg: #ffffff;
-  --color-brand-fg: #1b1b1b;
-  --color-brand-accent: #8f6e6e;
-  --color-brand-muted: #5e5e5e;
+  --color-bg-ivory: #f7f1e6;
+  --color-bg-deep: #1f1a17;
+  --color-ink: #231a14;
+  --color-terracotta: #b5532e;
+  --color-brass: #b99568;
+  --color-cream: #efe4cf;
+  --color-desert-shadow: #8a6b5c;
 
-  --font-display: var(--font-display), "Playfair Display", Georgia, serif;
+  /* Keep legacy aliases pointing at new tokens so older components still compile */
+  --color-brand-bg: var(--color-bg-ivory);
+  --color-brand-fg: var(--color-ink);
+  --color-brand-accent: var(--color-terracotta);
+  --color-brand-muted: var(--color-desert-shadow);
+
+  --font-display: var(--font-display), "Cormorant Garamond", Georgia, serif;
   --font-body: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 body {
-  background: var(--color-brand-bg);
-  color: var(--color-brand-fg);
+  background: var(--color-bg-ivory);
+  color: var(--color-ink);
   font-family: var(--font-body);
 }
 
@@ -21,5 +32,21 @@ body {
   font-weight: 500;
   font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.55em;
+  letter-spacing: 0.35em;
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
