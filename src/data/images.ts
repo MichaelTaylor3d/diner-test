@@ -1,14 +1,15 @@
 // Logical name → public path. Rename here, not across components.
 export const images = {
-  heroHome: "/images/home-00.jpg",
-  heroAllDay: "/images/all-day-00.jpg",
-  heroBrunch: "/images/brunch-00.jpg",
-  heroLunch: "/images/lunch-00.jpg",
-  heroDinner: "/images/dinner-00.jpg",
-  heroDrinks: "/images/drinks-00.jpg",
-  heroKids: "/images/kids-00.jpg",
-  heroHappyHour: "/images/happy-hour-00.jpg",
-  heroLocations: "/images/locations-00.jpg",
+  heroHome: "/images/home.jpg",
+  menuAllDay: "/images/all-day.jpg",
+  menuBrunch: "/images/brunch.jpg",
+  menuLunch: "/images/lunch.jpg",
+  menuDinner: "/images/dinner.jpg",
+  menuDrinks: "/images/drinks.jpg",
+  menuKids: "/images/kids.jpg",
+  menuHappyHour: "/images/happy-hour.jpg",
+  menuPurveyors: "/images/purveyors.jpg",
+  locationsMap: "/images/locations.jpg",
 } as const;
 
 export type ImageKey = keyof typeof images;

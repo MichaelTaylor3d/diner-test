@@ -15,7 +15,7 @@ const menus = [
 export default function MenuIndex() {
   return (
     <>
-      <Hero image={images.heroAllDay} alt="Dish" title="Menus" />
+      <Hero image={images.menuAllDay} alt="Menu" title="Menus" />
       <section className="mx-auto max-w-3xl px-4 py-12">
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {menus.map((m) => (
