@@ -45,3 +45,5 @@ next-env.d.ts
 
 # Playwright comparison artifacts
 .playwright/
+.aws/distribution-result.json
+.aws-deploy-bucket
