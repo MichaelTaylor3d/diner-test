@@ -43,7 +43,7 @@ export function SocialLinks({ className = "" }: { className?: string }) {
         href={externalLinks.facebook}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Facebook"
+        aria-label="Welcome Diner on Facebook (opens in a new tab)"
         className="hover:text-brand-accent"
       >
         <FacebookIcon />
@@ -52,7 +52,7 @@ export function SocialLinks({ className = "" }: { className?: string }) {
         href={externalLinks.instagram}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Instagram"
+        aria-label="Welcome Diner on Instagram (opens in a new tab)"
         className="hover:text-brand-accent"
       >
         <InstagramIcon />

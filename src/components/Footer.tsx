@@ -18,15 +18,15 @@ export function Footer() {
   )}`;
 
   return (
-    <footer className="mt-24 bg-bg-deep text-cream">
+    <footer role="contentinfo" className="mt-24 bg-bg-deep text-cream">
       <div className="mx-auto max-w-6xl px-4 py-16 grid gap-10 md:grid-cols-3">
         <div>
-          <Eyebrow className="text-brass">Welcome Diner</Eyebrow>
-          <p className="display text-3xl mt-3">
+          <Eyebrow className="text-brass" as="h2">Welcome Diner</Eyebrow>
+          <address className="not-italic display text-3xl mt-3">
             929 E Pierce St
             <br />
             Phoenix, AZ 85006
-          </p>
+          </address>
           <Link
             href="/locations"
             className="mt-4 inline-flex items-center gap-2 text-xs uppercase tracking-[0.35em] text-brass hover:text-cream transition-colors"
@@ -36,7 +36,7 @@ export function Footer() {
         </div>
 
         <div>
-          <Eyebrow className="text-brass">Hours</Eyebrow>
+          <Eyebrow className="text-brass" as="h2">Hours</Eyebrow>
           <dl className="mt-3 grid grid-cols-[max-content_1fr] gap-x-6 gap-y-1 text-sm">
             {hours.map((h) => (
               <div key={h.label} className="contents">
@@ -50,15 +50,16 @@ export function Footer() {
         </div>
 
         <div>
-          <Eyebrow className="text-brass">Follow</Eyebrow>
+          <Eyebrow className="text-brass" as="h2">Follow</Eyebrow>
           <div className="mt-3">
             <SocialLinks className="text-cream" />
           </div>
           <a
             href={mailto}
             className="mt-6 inline-block text-xs uppercase tracking-[0.35em] text-brass hover:text-cream transition-colors"
+            aria-label={`Inquire by email at ${externalLinks.inquireEmail}`}
           >
-            Inquire →
+            Inquire <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>

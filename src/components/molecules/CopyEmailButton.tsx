@@ -20,18 +20,22 @@ export function CopyEmailButton({ email, subject }: Props) {
   const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
 
   return (
-    <a
-      href={mailto}
-      onClick={onClick}
-      className="group relative inline-flex items-center justify-center overflow-hidden border border-brass px-8 py-4 text-xs uppercase tracking-[0.4em] text-brass transition-colors hover:text-bg-ivory"
-    >
-      <span
-        aria-hidden
-        className="absolute inset-0 origin-left scale-x-0 bg-brass transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-x-100"
-      />
-      <span className="relative z-10">
-        {copied ? "Copied " + email : "Email Us"}
+    <>
+      <a
+        href={mailto}
+        onClick={onClick}
+        aria-describedby="copy-email-status"
+        className="group relative inline-flex items-center justify-center overflow-hidden border border-brass px-8 py-4 text-xs uppercase tracking-[0.4em] text-brass transition-colors hover:text-bg-ivory"
+      >
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 origin-left scale-x-0 bg-brass transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-x-100"
+        />
+        <span className="relative z-10">{copied ? `Copied ${email}` : "Email Us"}</span>
+      </a>
+      <span id="copy-email-status" role="status" aria-live="polite" className="sr-only">
+        {copied ? `${email} copied to clipboard` : ""}
       </span>
-    </a>
+    </>
   );
 }

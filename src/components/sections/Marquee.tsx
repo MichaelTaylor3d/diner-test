@@ -15,7 +15,10 @@ export function Marquee() {
   const text = tokens.join("  \u25C6  ");
   const full = `${text}  \u25C6  ${text}  \u25C6  `;
   return (
-    <section className="relative overflow-hidden border-y border-brass/20 bg-cream/40 py-6">
+    <section
+      aria-hidden="true"
+      className="relative overflow-hidden border-y border-brass/20 bg-cream/40 py-6"
+    >
       <motion.div
         className="flex whitespace-nowrap will-change-transform"
         animate={{ x: ["0%", "-50%"] }}
