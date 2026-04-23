@@ -1,0 +1,17 @@
+{
+  "name": "Welcome Diner",
+  "short_name": "Welcome",
+  "description": "A farm-to-table diner in the Garfield Historic District, Downtown Phoenix.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F7F1E6",
+  "theme_color": "#F7F1E6",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48 32x32 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

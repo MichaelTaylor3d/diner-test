@@ -6,6 +6,8 @@ import { Footer } from "@/components/Footer";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { Grain } from "@/components/Grain";
 import { RestaurantSchema } from "@/components/seo/RestaurantSchema";
+import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
+import { WebSiteSchema } from "@/components/seo/WebSiteSchema";
 import { siteMeta } from "@/data/site";
 
 const display = Cormorant_Garamond({
@@ -13,12 +15,14 @@ const display = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   display: "swap",
+  preload: true,
 });
 
 const body = Inter({
   variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -28,6 +32,8 @@ export const metadata: Metadata = {
     template: `%s — ${siteMeta.name}`,
   },
   description: siteMeta.description,
+  applicationName: siteMeta.name,
+  category: "restaurant",
   keywords: [
     "Welcome Diner",
     "Phoenix diner",
@@ -38,11 +44,21 @@ export const metadata: Metadata = {
     "Sonoran diner",
     "brunch Phoenix",
     "late night food Phoenix",
+    "Pierce Street Phoenix",
+    "fried green tomato sandwich",
+    "biscuits and gravy Phoenix",
   ],
-  authors: [{ name: siteMeta.name }],
+  authors: [{ name: siteMeta.name, url: siteMeta.url }],
   creator: siteMeta.name,
   publisher: siteMeta.name,
-  alternates: { canonical: "/" },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -61,6 +77,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@welcomediner",
+    creator: "@welcomediner",
     title: `${siteMeta.name} — ${siteMeta.tagline}`,
     description: siteMeta.description,
     images: ["/images/home.jpg"],
@@ -68,22 +86,32 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1,
     },
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
+  manifest: "/site.webmanifest",
 };
 
 export const viewport: Viewport = {
   themeColor: "#F7F1E6",
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
@@ -97,11 +125,21 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg-ivory text-ink">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[500] focus:bg-bg-ivory focus:text-ink focus:px-4 focus:py-2 focus:border focus:border-brass"
+        >
+          Skip to main content
+        </a>
         <RestaurantSchema />
+        <OrganizationSchema />
+        <WebSiteSchema />
         <Grain />
         <SmoothScroll>
           <Header />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
           <Footer />
         </SmoothScroll>
       </body>

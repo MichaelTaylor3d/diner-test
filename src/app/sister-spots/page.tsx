@@ -2,16 +2,23 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { DisplayText } from "@/components/atoms/DisplayText";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
+import { RevealOnView } from "@/components/motion/RevealOnView";
+import { BrassButton } from "@/components/atoms/BrassButton";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { images } from "@/data/images";
 
 export const metadata: Metadata = {
   title: "Sister Spots",
   description:
     "More places we love — Hai Noon modern Asian diner and Hidden Gem cocktail bar, from the Welcome Diner family.",
   alternates: { canonical: "/sister-spots" },
+  openGraph: {
+    title: "Sister Spots — Welcome Diner",
+    description: "Hai Noon and Hidden Gem — more places we love in Phoenix.",
+    url: "/sister-spots",
+    images: [{ url: "/images/lux/hai-noon.jpg", width: 1200, height: 800, alt: "Hai Noon interior" }],
+  },
 };
-import { RevealOnView } from "@/components/motion/RevealOnView";
-import { BrassButton } from "@/components/atoms/BrassButton";
-import { images } from "@/data/images";
 
 const sisters = [
   {
@@ -34,7 +41,14 @@ const sisters = [
 
 export default function SisterSpots() {
   return (
-    <section className="mx-auto max-w-6xl px-4 py-20">
+    <>
+      <BreadcrumbSchema
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Sister Spots", path: "/sister-spots" },
+        ]}
+      />
+      <section className="mx-auto max-w-6xl px-4 py-20">
       <RevealOnView className="text-center">
         <Eyebrow className="text-terracotta">Sister Spots</Eyebrow>
         <DisplayText as="h1" size="lg" className="mt-2">
@@ -70,5 +84,6 @@ export default function SisterSpots() {
         ))}
       </div>
     </section>
+    </>
   );
 }

@@ -1,17 +1,23 @@
 import type { Metadata } from "next";
 import { RuledHeading } from "@/components/RuledHeading";
+import { Eyebrow } from "@/components/atoms/Eyebrow";
+import { DisplayText } from "@/components/atoms/DisplayText";
+import { RevealOnView } from "@/components/motion/RevealOnView";
+import { IconArrow } from "@/components/atoms/IconArrow";
+import { PressStrip } from "@/components/molecules/PressStrip";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Mentions",
   description:
     "Press, awards, and reviews for Welcome Diner — featured in AZ Central, Phoenix New Times, Thrillist, Food Network, Chowhound, Phoenix Magazine, and more.",
   alternates: { canonical: "/mentions" },
+  openGraph: {
+    title: "Mentions — Welcome Diner",
+    description: "Press, awards, reviews — a twenty-year collection.",
+    url: "/mentions",
+  },
 };
-import { Eyebrow } from "@/components/atoms/Eyebrow";
-import { DisplayText } from "@/components/atoms/DisplayText";
-import { RevealOnView } from "@/components/motion/RevealOnView";
-import { IconArrow } from "@/components/atoms/IconArrow";
-import { PressStrip } from "@/components/molecules/PressStrip";
 
 type Entry = { text: string; url?: string };
 
@@ -89,6 +95,12 @@ function Section({ label, entries }: { label: string; entries: Entry[] }) {
 export default function Mentions() {
   return (
     <>
+      <BreadcrumbSchema
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Mentions", path: "/mentions" },
+        ]}
+      />
       <section className="mx-auto max-w-3xl px-4 pt-16 text-center">
         <RevealOnView>
           <Eyebrow className="text-terracotta">Press</Eyebrow>

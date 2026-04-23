@@ -4,17 +4,31 @@ import { DisplayText } from "@/components/atoms/DisplayText";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { RevealOnView } from "@/components/motion/RevealOnView";
 import { Divider } from "@/components/atoms/Divider";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Menus",
   description:
     "All Welcome Diner menus — brunch, lunch, dinner, drinks, happy hour, and kids. Scratch-cooked Southern and Sonoran comfort food in Downtown Phoenix.",
   alternates: { canonical: "/menu" },
+  openGraph: {
+    title: "Menus — Welcome Diner",
+    description:
+      "All Welcome Diner menus — brunch, lunch, dinner, drinks, happy hour, and kids.",
+    url: "/menu",
+    images: [{ url: "/images/brunch.jpg", width: 1200, height: 800, alt: "Welcome Diner brunch menu" }],
+  },
 };
 
 export default function MenuIndex() {
   return (
     <>
+      <BreadcrumbSchema
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Menus", path: "/menu" },
+        ]}
+      />
       <RevealOnView className="mx-auto max-w-3xl px-4 pt-16 text-center">
         <Eyebrow className="text-terracotta">The Menus</Eyebrow>
         <DisplayText as="h1" size="xl" className="mt-2">

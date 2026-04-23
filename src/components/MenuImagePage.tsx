@@ -5,6 +5,7 @@ import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { RevealOnView } from "@/components/motion/RevealOnView";
 import { ChefNote } from "@/components/atoms/ChefNote";
 import { MenuPagination } from "@/components/molecules/MenuPagination";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { menuMeta, type MenuSlug } from "@/data/menuMeta";
 
 type Props = {
@@ -16,6 +17,13 @@ export function MenuImagePage({ slug, image }: Props) {
   const meta = menuMeta[slug];
   return (
     <section className="mx-auto max-w-5xl px-4 py-12">
+      <BreadcrumbSchema
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Menus", path: "/menu" },
+          { name: meta.title, path: `/menu/${slug}` },
+        ]}
+      />
       <Link
         href="/menu"
         className="group inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.35em] text-desert-shadow hover:text-terracotta transition-colors"
@@ -36,7 +44,7 @@ export function MenuImagePage({ slug, image }: Props) {
         <div className="relative w-full aspect-[3/4] sm:aspect-[4/3] shadow-[0_30px_60px_-30px_rgba(31,26,23,0.35)]">
           <Image
             src={image}
-            alt={`${meta.title} menu`}
+            alt={`Welcome Diner ${meta.title.toLowerCase()} menu — ${meta.note}`}
             fill
             priority
             sizes="(min-width: 1024px) 1024px, 100vw"

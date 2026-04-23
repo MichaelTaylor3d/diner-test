@@ -2,21 +2,34 @@ import type { Metadata } from "next";
 import { DisplayText } from "@/components/atoms/DisplayText";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { DropCap } from "@/components/atoms/DropCap";
+import { PullQuote } from "@/components/molecules/PullQuote";
+import { ParallaxImage } from "@/components/motion/ParallaxImage";
+import { RevealOnView } from "@/components/motion/RevealOnView";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { images } from "@/data/images";
 
 export const metadata: Metadata = {
   title: "Our Story",
   description:
     "Welcome Diner has served the Garfield Historic District of Downtown Phoenix since 2004 — a farm-to-table diner with Southern and Sonoran roots.",
   alternates: { canonical: "/our-story" },
+  openGraph: {
+    title: "Our Story — Welcome Diner",
+    description: "A farm-to-table diner with a Sonoran accent, rooted in Garfield since 2004.",
+    url: "/our-story",
+    images: [{ url: "/images/lux/story-space.jpg", width: 1400, height: 900, alt: "Welcome Diner dining room" }],
+  },
 };
-import { PullQuote } from "@/components/molecules/PullQuote";
-import { ParallaxImage } from "@/components/motion/ParallaxImage";
-import { RevealOnView } from "@/components/motion/RevealOnView";
-import { images } from "@/data/images";
 
 export default function OurStory() {
   return (
     <article className="mx-auto max-w-3xl px-4 py-20 space-y-10">
+      <BreadcrumbSchema
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Our Story", path: "/our-story" },
+        ]}
+      />
       <header className="text-center">
         <Eyebrow className="text-terracotta">Our Story</Eyebrow>
         <DisplayText as="h1" size="lg" className="mt-2">

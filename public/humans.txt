@@ -1,0 +1,21 @@
+/* TEAM */
+
+Welcome Diner
+929 E Pierce St, Phoenix, AZ 85006
+https://welcomediner.net
+
+/* SITE */
+
+Last update: 2026-04-23
+Language: English
+Doctype: HTML5
+IDE: Next.js, Tailwind, TypeScript
+
+/* PURVEYORS */
+
+Hayden Flour Mills — Queen Creek, AZ
+Schreiner's Fine Sausage — Phoenix, AZ
+Noble Bread — Phoenix, AZ
+McClendon's Select — Phoenix, AZ
+Hickman's Family Farms — AZ
+Crooked Sky Farms — AZ

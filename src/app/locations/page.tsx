@@ -2,18 +2,26 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { DisplayText } from "@/components/atoms/DisplayText";
 
-export const metadata: Metadata = {
-  title: "Locations",
-  description:
-    "Visit Welcome Diner at 929 E Pierce St in the Garfield Historic District of Downtown Phoenix. Open Sunday through Saturday with late-night service Friday and Saturday.",
-  alternates: { canonical: "/locations" },
-};
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { BrassButton } from "@/components/atoms/BrassButton";
 import { Divider } from "@/components/atoms/Divider";
 import { RevealOnView } from "@/components/motion/RevealOnView";
 import { AmbientStrip } from "@/components/molecules/AmbientStrip";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { images } from "@/data/images";
+
+export const metadata: Metadata = {
+  title: "Locations",
+  description:
+    "Visit Welcome Diner at 929 E Pierce St in the Garfield Historic District of Downtown Phoenix. Open Sunday through Saturday with late-night service Friday and Saturday.",
+  alternates: { canonical: "/locations" },
+  openGraph: {
+    title: "Locations — Welcome Diner",
+    description: "929 E Pierce St, Phoenix AZ 85006. Open daily.",
+    url: "/locations",
+    images: [{ url: "/images/lux/room.jpg", width: 1200, height: 800, alt: "Welcome Diner interior" }],
+  },
+};
 
 const hours = [
   { label: "Sun", value: "9a – 9p" },
@@ -31,6 +39,12 @@ const ambient = [
 export default function Locations() {
   return (
     <>
+      <BreadcrumbSchema
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Locations", path: "/locations" },
+        ]}
+      />
       <section className="mx-auto max-w-6xl px-4 py-20 grid gap-12 md:grid-cols-2 items-center">
         <RevealOnView className="relative aspect-[4/5] overflow-hidden">
           <Image

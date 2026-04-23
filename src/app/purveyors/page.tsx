@@ -1,22 +1,35 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Eyebrow } from "@/components/atoms/Eyebrow";
+import { DisplayText } from "@/components/atoms/DisplayText";
+import { RevealOnView } from "@/components/motion/RevealOnView";
+import { PurveyorGrid } from "@/components/sections/PurveyorGrid";
+import { Divider } from "@/components/atoms/Divider";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { images } from "@/data/images";
 
 export const metadata: Metadata = {
   title: "Purveyors",
   description:
     "The partners behind every plate at Welcome Diner — Hayden Flour Mills, Schreiner's Sausage, Noble Bread, McClendon's Select, Hickman's Farms, Crooked Sky, and more.",
   alternates: { canonical: "/purveyors" },
+  openGraph: {
+    title: "Purveyors — Welcome Diner",
+    description: "The Arizona partners behind every plate at Welcome Diner.",
+    url: "/purveyors",
+    images: [{ url: "/images/lux/purveyor-grain.jpg", width: 1200, height: 800, alt: "Heritage grain from Hayden Flour Mills" }],
+  },
 };
-import { Eyebrow } from "@/components/atoms/Eyebrow";
-import { DisplayText } from "@/components/atoms/DisplayText";
-import { RevealOnView } from "@/components/motion/RevealOnView";
-import { PurveyorGrid } from "@/components/sections/PurveyorGrid";
-import { Divider } from "@/components/atoms/Divider";
-import { images } from "@/data/images";
 
 export default function Purveyors() {
   return (
     <>
+      <BreadcrumbSchema
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Purveyors", path: "/purveyors" },
+        ]}
+      />
       <section className="mx-auto max-w-3xl px-4 py-20 text-center">
         <RevealOnView>
           <Eyebrow className="text-terracotta">Purveyors</Eyebrow>

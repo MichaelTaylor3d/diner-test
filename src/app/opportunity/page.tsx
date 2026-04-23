@@ -2,17 +2,24 @@ import type { Metadata } from "next";
 import { DisplayText } from "@/components/atoms/DisplayText";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { Divider } from "@/components/atoms/Divider";
+import { RevealOnView } from "@/components/motion/RevealOnView";
+import { CopyEmailButton } from "@/components/molecules/CopyEmailButton";
+import { StaffQuote } from "@/components/molecules/StaffQuote";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { images } from "@/data/images";
 
 export const metadata: Metadata = {
   title: "Opportunity",
   description:
     "Join the Welcome Diner team. We're hiring prep cooks, line cooks, and dishwashers — strong team members with unique and valuable skills.",
   alternates: { canonical: "/opportunity" },
+  openGraph: {
+    title: "Opportunity — Welcome Diner",
+    description: "Join the team — now hiring prep cooks, line cooks, dishwashers.",
+    url: "/opportunity",
+    images: [{ url: "/images/lux/staff-portrait.jpg", width: 1400, height: 1750, alt: "Welcome Diner kitchen team" }],
+  },
 };
-import { RevealOnView } from "@/components/motion/RevealOnView";
-import { CopyEmailButton } from "@/components/molecules/CopyEmailButton";
-import { StaffQuote } from "@/components/molecules/StaffQuote";
-import { images } from "@/data/images";
 
 const hiringEmail = "joinourteam@welcomehospitality.com";
 
@@ -21,6 +28,12 @@ const roles = ["Prep Cook", "Line Cook", "Dishwasher"];
 export default function Opportunity() {
   return (
     <>
+      <BreadcrumbSchema
+        crumbs={[
+          { name: "Home", path: "/" },
+          { name: "Opportunity", path: "/opportunity" },
+        ]}
+      />
       <section className="mx-auto max-w-2xl px-4 py-20 text-center">
         <RevealOnView>
           <Eyebrow className="text-terracotta">Opportunity</Eyebrow>
