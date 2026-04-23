@@ -8,11 +8,6 @@ import { primaryNav } from "@/data/nav";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     if (open) {
@@ -65,7 +60,7 @@ export function MobileNav() {
       >
         {open ? <X size={24} /> : <Menu size={24} />}
       </button>
-      {mounted && overlay && createPortal(overlay, document.body)}
+      {overlay && typeof document !== "undefined" && createPortal(overlay, document.body)}
     </>
   );
 }

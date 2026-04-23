@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import { DisplayText } from "@/components/atoms/DisplayText";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { DropCap } from "@/components/atoms/DropCap";
+
+export const metadata: Metadata = {
+  title: "Our Story",
+  description:
+    "Welcome Diner has served the Garfield Historic District of Downtown Phoenix since 2004 — a farm-to-table diner with Southern and Sonoran roots.",
+  alternates: { canonical: "/our-story" },
+};
 import { PullQuote } from "@/components/molecules/PullQuote";
 import { ParallaxImage } from "@/components/motion/ParallaxImage";
 import { RevealOnView } from "@/components/motion/RevealOnView";

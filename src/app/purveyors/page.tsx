@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Purveyors",
+  description:
+    "The partners behind every plate at Welcome Diner — Hayden Flour Mills, Schreiner's Sausage, Noble Bread, McClendon's Select, Hickman's Farms, Crooked Sky, and more.",
+  alternates: { canonical: "/purveyors" },
+};
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { DisplayText } from "@/components/atoms/DisplayText";
 import { RevealOnView } from "@/components/motion/RevealOnView";

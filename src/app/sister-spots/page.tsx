@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { DisplayText } from "@/components/atoms/DisplayText";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
+
+export const metadata: Metadata = {
+  title: "Sister Spots",
+  description:
+    "More places we love — Hai Noon modern Asian diner and Hidden Gem cocktail bar, from the Welcome Diner family.",
+  alternates: { canonical: "/sister-spots" },
+};
 import { RevealOnView } from "@/components/motion/RevealOnView";
 import { BrassButton } from "@/components/atoms/BrassButton";
 import { images } from "@/data/images";

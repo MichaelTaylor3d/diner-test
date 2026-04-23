@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { DisplayText } from "@/components/atoms/DisplayText";
+
+export const metadata: Metadata = {
+  title: "Locations",
+  description:
+    "Visit Welcome Diner at 929 E Pierce St in the Garfield Historic District of Downtown Phoenix. Open Sunday through Saturday with late-night service Friday and Saturday.",
+  alternates: { canonical: "/locations" },
+};
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { BrassButton } from "@/components/atoms/BrassButton";
 import { Divider } from "@/components/atoms/Divider";

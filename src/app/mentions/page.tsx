@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import { RuledHeading } from "@/components/RuledHeading";
+
+export const metadata: Metadata = {
+  title: "Mentions",
+  description:
+    "Press, awards, and reviews for Welcome Diner — featured in AZ Central, Phoenix New Times, Thrillist, Food Network, Chowhound, Phoenix Magazine, and more.",
+  alternates: { canonical: "/mentions" },
+};
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { DisplayText } from "@/components/atoms/DisplayText";
 import { RevealOnView } from "@/components/motion/RevealOnView";

@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
 import { MenuCardGrid } from "@/components/sections/MenuCardGrid";
 import { DisplayText } from "@/components/atoms/DisplayText";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { RevealOnView } from "@/components/motion/RevealOnView";
 import { Divider } from "@/components/atoms/Divider";
+
+export const metadata: Metadata = {
+  title: "Menus",
+  description:
+    "All Welcome Diner menus — brunch, lunch, dinner, drinks, happy hour, and kids. Scratch-cooked Southern and Sonoran comfort food in Downtown Phoenix.",
+  alternates: { canonical: "/menu" },
+};
 
 export default function MenuIndex() {
   return (

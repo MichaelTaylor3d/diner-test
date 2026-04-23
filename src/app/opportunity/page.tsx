@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import { DisplayText } from "@/components/atoms/DisplayText";
 import { Eyebrow } from "@/components/atoms/Eyebrow";
 import { Divider } from "@/components/atoms/Divider";
+
+export const metadata: Metadata = {
+  title: "Opportunity",
+  description:
+    "Join the Welcome Diner team. We're hiring prep cooks, line cooks, and dishwashers — strong team members with unique and valuable skills.",
+  alternates: { canonical: "/opportunity" },
+};
 import { RevealOnView } from "@/components/motion/RevealOnView";
 import { CopyEmailButton } from "@/components/molecules/CopyEmailButton";
 import { StaffQuote } from "@/components/molecules/StaffQuote";
