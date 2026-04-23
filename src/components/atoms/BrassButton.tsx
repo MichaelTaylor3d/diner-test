@@ -19,7 +19,7 @@ export function BrassButton({ href, external, size = "sm", className = "", child
   const base =
     "group relative inline-flex items-center justify-center overflow-hidden border border-brass uppercase tracking-[0.4em] text-brass transition-all duration-500 ease-[cubic-bezier(.22,1,.36,1)] hover:tracking-[0.55em] hover:shadow-[0_10px_30px_-10px_rgba(185,149,104,0.45)]";
   const fill =
-    "before:absolute before:inset-0 before:origin-left before:scale-x-0 before:bg-brass before:transition-transform before:duration-500 before:ease-[cubic-bezier(.22,1,.36,1)] hover:before:scale-x-100 hover:text-bg-ivory";
+    "before:absolute before:inset-0 before:origin-left before:scale-x-0 before:bg-[linear-gradient(100deg,#9b7a52_0%,#d4b380_45%,#b99568_55%,#8a6b4a_100%)] before:transition-transform before:duration-[650ms] before:ease-[cubic-bezier(.22,1,.36,1)] hover:before:scale-x-100 hover:text-bg-deep";
   const text = "relative z-10";
   const cls = `${base} ${fill} ${sizes[size]} ${className}`;
   const body = (

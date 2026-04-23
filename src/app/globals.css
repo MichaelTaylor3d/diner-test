@@ -38,7 +38,14 @@ body {
 .display {
   font-family: var(--font-display);
   font-weight: 500;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.005em;
+}
+
+/* Hero-scale display stamps use weight 600 with tighter tracking for an editorial masthead feel. */
+h1.display,
+.display-h1 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 /* Global keyboard focus ring. Applies anywhere a component doesn't set its own. */

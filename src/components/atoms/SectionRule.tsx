@@ -1,12 +1,5 @@
+import { Ornament } from "./Ornament";
+
 export function SectionRule() {
-  return (
-    <div
-      aria-hidden="true"
-      className="mx-auto flex items-center justify-center gap-4 py-10"
-    >
-      <span className="h-px w-24 bg-brass/40" />
-      <span className="text-brass text-sm">◆</span>
-      <span className="h-px w-24 bg-brass/40" />
-    </div>
-  );
+  return <Ornament />;
 }
