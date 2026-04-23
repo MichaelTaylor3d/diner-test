@@ -76,7 +76,15 @@ Three site-wide schemas injected on every page via `RootLayout`:
 - Wired into every subpage (`/menu`, `/menu/*` via MenuImagePage, `/locations`, `/our-story`, `/mentions`, `/opportunity`, `/purveyors`, `/sister-spots`).
 - Three-level hierarchy for menu subpages (Home > Menus > All Day).
 
-Combined, these make the site eligible for: Local Pack, Knowledge Graph, rich hour/phone snippets, sitelinks search box, breadcrumb trails in SERP, and brand Knowledge Panel.
+**Per menu subpage:** `src/components/seo/MenuSchema.tsx` — `@type: Menu` with nested `MenuSection` and `MenuItem`
+- Every dish transcribed from the rasterized menu JPGs into `src/data/menuContent.ts`.
+- Each `MenuItem` ships `name`, `description`, `Offer` price in USD, and `suitableForDiet` tags (`VeganDiet`, `VegetarianDiet`, `GlutenFreeDiet`).
+- Emitted on all seven menu routes (all-day, brunch, lunch, dinner, drinks, kids, happy-hour).
+- Eligible for Google's menu rich result in restaurant Knowledge Panel.
+
+**Accessible menu transcript (sr-only):** `MenuImagePage.tsx` additionally renders a visually hidden `<div class="sr-only">` containing the full menu as proper headings + lists. The rasterized JPG remains the primary visual; screen readers and crawlers read the text version, closing the a11y gap and boosting keyword density for every menu item.
+
+Combined, these make the site eligible for: Local Pack, Knowledge Graph, rich hour/phone snippets, menu rich result, sitelinks search box, breadcrumb trails in SERP, and brand Knowledge Panel.
 
 ## 5. Crawl & indexing files
 
@@ -141,7 +149,6 @@ Core Web Vitals target: LCP < 2.5s, CLS < 0.1, INP < 200ms. Lighthouse perf ≥ 
 | Dedicated 1200×630 OG hero | Using existing 1200×800 hero; social platforms accept any size ≥ 600×315. Worth revisiting if we want CTA-overlay graphics. |
 | Apple-touch-icon PNG (180×180) | Currently referencing `favicon.ico` as `apple`. Native `.png` touch icon recommended for iOS home-screen add. |
 | Android 192/512 icons | Not shipped — `site.webmanifest` references favicon.ico. Needs raster assets. |
-| `Menu` / `MenuItem` JSON-LD | Menus are rasterized JPGs; structured text would require retyping every item. |
 | Review schema | We quote press but don't own review data; `aggregateRating` would need a real source. |
 | hreflang / i18n | Single language. |
 | Image sitemap for every route | Currently only key images per route; could enumerate the full triptych/ambient strip. |
